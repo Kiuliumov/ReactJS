@@ -6,7 +6,7 @@ export default function App() {
   return (
     <>
       <Header name="Kiu"/>
-      <MovieList movies={["Revenge of the Sith", "Interstellar", "The Matrix"]}/>
+      <MovieList movies={[{title:"Revenge of the Sith"}, {title:"Interstellar"}, {title:"The Matrix"}]}/>
       <Footer />
 
     </>
