@@ -1,10 +1,12 @@
 const express = require('express');
+const cors = require('cors');
 const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
 
 const app = express();
-const PORT = 3000;
+const PORT = 4000;
 
+app.use(cors());
 app.use(express.json());
 
 const dbPath = path.resolve(__dirname, 'todos.db');
@@ -19,7 +21,6 @@ db.run(`
     completed INTEGER DEFAULT 0
   )
 `);
-
 
 app.get('/todos', (req, res) => {
   db.all('SELECT * FROM todos', [], (err, rows) => {
